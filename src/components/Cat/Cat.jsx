@@ -1,8 +1,7 @@
-import { useCatFact } from "../../hooks/useCatFact.jsx";
-import { useCatImg } from "../../hooks/useCatImg.jsx";
-
 // const CAT_FACT_API = "https://catfact.ninja/fact";
 // const CAT_IMAGE_API = "https://cataas.com/cat/says";
+import { useCatFact } from "../../hooks/useCatFact.jsx";
+import { useCatImg } from "../../hooks/useCatImg.jsx";
 
 /**
  * The Cat component.
@@ -12,6 +11,24 @@ import { useCatImg } from "../../hooks/useCatImg.jsx";
 export function Cat() {
 	const { catFact } = useCatFact();
 	const { catImg } = useCatImg(catFact);
+
+	/* 
+	ONE USE EFFECT
+	// const [catFact, setCatFact] = useState();
+	// const [catImg, setCatImg] = useState();
+
+	// useEffect(() => {
+	// 	async function fetchCatInfo() {
+	// 		const response = await fetch(CAT_FACT_API);
+	// 		const data = await response.json();
+	// 		setCatFact(data.fact);
+	// 		const { url } = await fetch(`${CAT_IMAGE_API}/${data.fact.split(" ")[0]}`);
+	// 		setCatImg(url);
+	// 	}
+	// 	fetchCatInfo();
+	// }, []);
+	*/
+
 	/* 
 	NO COSTUME HOOK!
 	// const [catFact, setCatFact] = useState();
